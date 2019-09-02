@@ -8,19 +8,15 @@ public class RemunerationEmploye {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Integer id;
+	@Column
 	private String matricule;
-
 	@ManyToOne
-	@Column
 	private Entreprise entreprise;
-
 	@ManyToOne
-	@Column
 	private ProfilRemuneration profilRemuneration;
-
 	@ManyToOne
-	@Column
 	private Grade grade;
 
 	public String getMatricule() {
