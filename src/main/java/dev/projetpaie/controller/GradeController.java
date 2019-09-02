@@ -6,24 +6,23 @@ import dev.projetpaie.service.GradeService;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "/grades")
 public class GradeController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(GradeController.class);
-
+    @Autowired
     private GradeService gradeService;
 
-    @RequestMapping(path = "/grades", method = RequestMethod.GET)
+    @GetMapping
     public ResponseEntity<List<GradeDto>> listeGrades() {
-        LOGGER.info("appel de listeGrades()");
         return ResponseEntity.status(200).contentType(MediaType.APPLICATION_JSON)
                 .body(gradeService.recupererListeGradesDto());
     }

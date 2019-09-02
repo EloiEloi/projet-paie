@@ -1,7 +1,5 @@
 package dev.projetpaie.dto;
 
-import dev.projetpaie.entities.Entreprise;
-
 public class EntrepriseDto {
 
     private String code;
@@ -11,9 +9,9 @@ public class EntrepriseDto {
         super();
     }
 
-    public EntrepriseDto(Entreprise entreprise) {
-        this.code = entreprise.getCode();
-        this.denomination = entreprise.getDenomination();
+    public EntrepriseDto(String code, String denomination) {
+        this.code = code;
+        this.denomination = denomination;
     }
 
     public String getCode() {
