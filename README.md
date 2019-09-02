@@ -11,7 +11,7 @@ https://paie-api-api.herokuapp.com/
 
 <br>
 
----
+
 
  ## Ajouter un employé
 
@@ -33,7 +33,9 @@ ContentType: application/json
 }
 ```
 
-<br>
+<br>  
+
+#### Réponses :  
 
 Réponse en cas de succès (succès de l'ajout de l'employé):
 ``` json
@@ -63,10 +65,6 @@ Content-Type: application/json
 ```
 
 
-
-<br>
-
----- 
 
 
  ## Lister les employés
@@ -102,7 +100,7 @@ ContentType: application/json
 
 <br>
 
----- 
+
 
 
  ## Lister les entreprises
@@ -133,7 +131,7 @@ ContentType: application/json
 
 <br>
 
----- 
+
 
 
  ## Lister les grades
@@ -169,7 +167,7 @@ ContentType: application/json
 ```
 <br>
 
----- 
+
 
 
  ## Lister les reférentiels
@@ -185,7 +183,6 @@ ContentType: application/json
     {
         "code": "A",
         "taux_jour": "Dev Institut",
-        
     },
     {
         "code": "B",
