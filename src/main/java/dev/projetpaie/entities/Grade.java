@@ -2,6 +2,7 @@ package dev.projetpaie.entities;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,9 +15,13 @@ public class Grade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Integer id;
+	@Column
 	private String code;
+	@Column
 	private BigDecimal nbHeuresBase;
+	@Column
 	private BigDecimal tauxBase;
 
 	public String getCode() {

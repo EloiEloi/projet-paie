@@ -2,6 +2,7 @@ package dev.projetpaie.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,8 +15,11 @@ public class Periode {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Integer id;
+	@Column
 	private LocalDate dateDebut;
+	@Column
 	private LocalDate dateFin;
 
 	public LocalDate getDateDebut() {
