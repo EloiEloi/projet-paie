@@ -11,20 +11,16 @@ import java.util.List;
 @Service
 public class EntrepriseService {
 
-    private final EntrepriseRepository entrepriseRepository;
-
-    public EntrepriseService(EntrepriseRepository entrepriseRepository) {
-        this.entrepriseRepository = entrepriseRepository;
-    }
+    private EntrepriseRepository entrepriseRepository;
 
     public List<EntrepriseDto> recupererListeEntreprisesDto() {
-        List<Entreprise> entreprises = entrepriseRepository.findAll();
-        List<EntrepriseDto> entreprisesDto = new ArrayList<>();
+        List<Entreprise> listEntreprises = entrepriseRepository.findAll();
+        List<EntrepriseDto> listEntreprisesDto = new ArrayList<>();
 
-        for (Entreprise entr : entreprises) {
-            entreprisesDto.add(new EntrepriseDto(entr));
+        for (Entreprise entr : listEntreprises) {
+            listEntreprisesDto.add(new EntrepriseDto(entr));
         }
 
-        return entreprisesDto;
+        return listEntreprisesDto;
     }
 }

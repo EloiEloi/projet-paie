@@ -17,11 +17,7 @@ public class EntrepriseControleur {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EntrepriseControleur.class);
 
-    private final EntrepriseService entrepriseService;
-
-    public EntrepriseControleur(EntrepriseService entrepriseService) {
-        this.entrepriseService = entrepriseService;
-    }
+    private EntrepriseService entrepriseService;
 
     @RequestMapping(path = "/entreprises", method = RequestMethod.GET)
     public ResponseEntity<List<EntrepriseDto>> listeEntreprises() {

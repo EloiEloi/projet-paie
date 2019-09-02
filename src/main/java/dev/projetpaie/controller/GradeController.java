@@ -1,7 +1,8 @@
 package dev.projetpaie.controller;
 
-import dev.projetpaie.dto.EntrepriseDto;
-import dev.projetpaie.service.EntrepriseService;
+import dev.projetpaie.dto.GradeDto;
+
+import dev.projetpaie.service.GradeService;
 
 import java.util.List;
 
@@ -16,19 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GradeController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EntrepriseControleur.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GradeController.class);
 
-    private final EntrepriseService entrepriseService;
-
-    public EntrepriseControleur(EntrepriseService entrepriseService) {
-        this.entrepriseService = entrepriseService;
-    }
+    private GradeService gradeService;
 
     @RequestMapping(path = "/grades", method = RequestMethod.GET)
-    public ResponseEntity<List<EntrepriseDto>> listeGrades() {
+    public ResponseEntity<List<GradeDto>> listeGrades() {
         LOGGER.info("appel de listeGrades()");
         return ResponseEntity.status(200).contentType(MediaType.APPLICATION_JSON)
-                .body(entrepriseService.recupererListeEntreprisesDto());
+                .body(gradeService.recupererListeGradesDto());
     }
 
 }
