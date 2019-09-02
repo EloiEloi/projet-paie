@@ -86,14 +86,14 @@ ContentType: application/json
         "code_grade" : "A"
     },
     {
-        "matricule" :  "69253276",
+        "matricule" :  "68123821",
         "code_entreprise" : "SOP",
         "code_profil" : "Cadre",
-        "code_grade" : "A"
+        "code_grade" : "B"
     },
     {
         "matricule" :  "69253276",
-        "code_entreprise" : "SOP",
+        "code_entreprise" : "DEV",
         "code_profil" : "Cadre",
         "code_grade" : "A"
     }
@@ -131,3 +131,69 @@ ContentType: application/json
 ```
 
 
+<br>
+
+---- 
+
+
+ ## Lister les grades
+
+ 
+
+``` json
+GET /grades
+
+ContentType: application/json
+
+{
+    {
+        "id" : "1",
+        "code": "A",
+        "taux_jour_base" : "200",
+        "nbr_heures_base" : "39"
+
+    },
+    {
+       "id" : "2",
+        "code": "B",
+        "taux_jour_base" : "300",
+        "nbr_heures_base" : "39"
+    },
+    {
+       "id" : "3",
+        "code": "C",
+        "taux_jour_base" : "400",
+        "nbr_heures_base" : "39"
+    }
+}
+```
+<br>
+
+---- 
+
+
+ ## Lister les reférentiels
+
+ 
+
+``` json
+GET /grades
+
+ContentType: application/json
+
+{
+    {
+        "code": "A",
+        "taux_jour": "Dev Institut",
+        
+    },
+    {
+        "code": "B",
+        "taux_jour": "Sopra-Steria"
+    },
+    {
+        "code": "C",
+        "taux_jour": "Capgemini"
+    }
+}
+```
