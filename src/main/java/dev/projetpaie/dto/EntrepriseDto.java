@@ -1,6 +1,6 @@
 package dev.projetpaie.dto;
 
-import dev.projetpaie.entites.Entreprise;
+import dev.projetpaie.entities.Entreprise;
 
 public class EntrepriseDto {
 
