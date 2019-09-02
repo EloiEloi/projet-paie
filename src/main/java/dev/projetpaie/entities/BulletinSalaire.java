@@ -3,8 +3,10 @@ package dev.projetpaie.entities;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "bulletin_salaire")
 public class BulletinSalaire {
 
 	private Integer id;
