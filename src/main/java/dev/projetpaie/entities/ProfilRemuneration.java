@@ -2,6 +2,8 @@ package dev.projetpaie.entities;
 
 import java.util.List;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,11 +18,13 @@ public class ProfilRemuneration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "code")
     private String code;
 
     @ManyToMany
-    @JoinTable(name = "remuneration_cotisation")
+    @JoinTable(name = "profil_remuneration_cotisation", joinColumns = @JoinColumn(name = "profil_remuneration_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "cotisation_id", referencedColumnName = "id"))
     private List<Cotisation> cotisations;
 
     public Integer getId() {

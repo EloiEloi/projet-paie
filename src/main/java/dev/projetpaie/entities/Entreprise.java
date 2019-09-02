@@ -1,5 +1,6 @@
 package dev.projetpaie.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,12 +13,19 @@ public class Entreprise {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Integer id;
+	@Column
 	private String code;
+	@Column
 	private String siret;
+	@Column
 	private String denomination;
+	@Column
 	private String adresse;
+	@Column
 	private String urssaf;
+	@Column
 	private String codeNaf;
 
 	public String getCode() {
