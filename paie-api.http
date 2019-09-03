@@ -1,0 +1,28 @@
+#### Liste des entreprise
+GET http://localhost:8080/entreprises HTTP/1.1
+
+#### Liste des grades
+GET http://localhost:8080/grades HTTP/1.1
+
+#### Liste des profils de rémuneration
+GET http://localhost:8080/profil_remuneration HTTP/1.1
+
+#### Referentiel :  liste des entreprises + liste des rémunérations + liste des profils de rémuneration
+GET http://localhost:8080/referentiel HTTP/1.1
+
+
+#### Ajouter une rémuneration à un employé
+POST http://localhost:8080/remuneration_employe HTTP/1.1
+content-type: application/json
+
+{
+    "matricule" : "sample",
+    "code_entreprise" : "DEV",
+    "code_profil" : "cadre",
+    "code_grade" : "A"
+}
+
+#### Liste des employes
+GET https://eloi-collegues-api.herokuapp.com/collegues HTTP/1.1
+
+
