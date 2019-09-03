@@ -1,7 +1,7 @@
 package dev.projetpaie.service;
 
 import dev.projetpaie.dto.EntrepriseDto;
-import dev.projetpaie.entities.Entreprise;
+
 import dev.projetpaie.repository.EntrepriseRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

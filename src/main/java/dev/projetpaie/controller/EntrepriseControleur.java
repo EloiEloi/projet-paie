@@ -23,6 +23,6 @@ public class EntrepriseControleur {
     @GetMapping
     public ResponseEntity<List<EntrepriseDto>> listerEntreprises() {
         return new ResponseEntity<>(entrepriseService.recupererListeEntreprisesDto(), HttpStatus.OK);
-
     }
+
 }
