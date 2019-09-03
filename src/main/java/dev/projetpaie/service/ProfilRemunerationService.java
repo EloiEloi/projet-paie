@@ -28,5 +28,5 @@ public class ProfilRemunerationService {
     public ProfilRemuneration recupererProfilRemunerationParCode(String codeProfil) {
         return remunerationRepository.findByCode(codeProfil);
     }
-    }
+
 }
