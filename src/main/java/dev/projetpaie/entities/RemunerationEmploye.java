@@ -1,5 +1,7 @@
 package dev.projetpaie.entities;
 
+import java.time.ZonedDateTime;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +20,8 @@ public class RemunerationEmploye {
 	private ProfilRemuneration profilRemuneration;
 	@ManyToOne
 	private Grade grade;
+
+	private ZonedDateTime dateCreation;
 
 	public String getMatricule() {
 		return matricule;
@@ -57,5 +61,19 @@ public class RemunerationEmploye {
 
 	public void setId(Integer id) {
 		this.id = id;
+
 	}
+
+	@PrePersist
+	public void setDateCreation() {
+		this.dateCreation = ZonedDateTime.now();
+	}
+
+	/**
+	 * @return the dateCreation
+	 */
+	public ZonedDateTime getDateCreation() {
+		return dateCreation;
+	}
+
 }

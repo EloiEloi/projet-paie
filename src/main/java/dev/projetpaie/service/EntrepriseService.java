@@ -1,7 +1,7 @@
 package dev.projetpaie.service;
 
 import dev.projetpaie.dto.EntrepriseDto;
-
+import dev.projetpaie.entities.Entreprise;
 import dev.projetpaie.repository.EntrepriseRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,11 @@ public class EntrepriseService {
     private EntrepriseRepository entrepriseRepository;
 
     public List<EntrepriseDto> recupererListeEntreprisesDto() {
-        return entrepriseRepository.findAll().stream().map(er -> new EntrepriseDto(er.getCode(), er.getDenomination()))
-                .collect(Collectors.toList());
+        return entrepriseRepository.findAll().stream().map(er -> new EntrepriseDto(er)).collect(Collectors.toList());
     }
+
+    public Entreprise recupererEntrepriseParCode(String codeEntreprise) {
+        return entrepriseRepository.findByCode(codeEntreprise);
+    }
+
 }

@@ -27,4 +27,8 @@ public class GradeService {
         return listeGradesDto;
     }
 
+    public Grade recupererGradeParCode(String codeGrade) {
+        return gradeRepository.findByCode(codeGrade);
+    }
+
 }
