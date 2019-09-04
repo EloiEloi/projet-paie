@@ -19,11 +19,16 @@ POST http://localhost:8080/remuneration_employe HTTP/1.1
 content-type: application/json
 
 {
-    "matricule" : "44fd25eb-2bd8-479f-b638-7dedb9d3605f",
+    "matricule" : "a082fdd2-2063-4762-92ca-ce9c1d8282ca",
     "code_entreprise" : "DEV",
     "code_profil" : "Technicien",
     "code_grade" : "GRADE_A"
 }
+
+####  Liste des rémuneration employés
+GET http://localhost:8080/remuneration_employe HTTP/1.1
+
+
 
 #### Liste des employes
 GET https://eloi-collegues-api.herokuapp.com/collegues HTTP/1.1

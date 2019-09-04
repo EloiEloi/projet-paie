@@ -1,11 +1,15 @@
 package dev.projetpaie.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.validation.Validator;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import dev.projetpaie.dto.AjouterEmployeDto;
+import dev.projetpaie.dto.RemunerationEmployeDto;
 import dev.projetpaie.entities.Collegue;
 import dev.projetpaie.entities.RemunerationEmploye;
 import dev.projetpaie.exception.MatriculeNonTrouveException;
@@ -35,12 +39,11 @@ public class RemunerationEmployeService {
         this.validator = validator;
     }
 
-    public RemunerationEmploye ajouterEmploye(AjouterEmployeDto ajoutEmployeDto)
-            throws MatriculeNonTrouveException, RemunerationEmployeException {
+    public RemunerationEmploye ajouterEmploye(AjouterEmployeDto ajoutEmployeDto) {
 
         RemunerationEmploye remunerationEmploye = new RemunerationEmploye();
 
-        Collegue collegue = rt.getForObject(urlApiCollegue + "/collegues/" + ajoutEmployeDto.getMatricule(),
+        Collegue collegue = rt.getForObject(urlApiCollegue + "/matricule/" + ajoutEmployeDto.getMatricule(),
                 Collegue.class, 1);
 
         if (collegue != null) {
@@ -53,13 +56,17 @@ public class RemunerationEmployeService {
 
             if (validator.validate(remunerationEmploye).isEmpty()) {
                 return remunerationEmployeRepository.save(remunerationEmploye);
-            } else {
-                throw new RemunerationEmployeException("Donnee(s) non valide(s)");
             }
+
         } else {
-            throw new MatriculeNonTrouveException("Matricule inexistant");
+            return null;
         }
 
+        return remunerationEmploye;
     }
 
+    public List<RemunerationEmployeDto> recupererListeRemunerationEmployerDto() {
+        return remunerationEmployeRepository.findAll().stream().map(re -> new RemunerationEmployeDto(re))
+                .collect(Collectors.toList());
+    }
 }
