@@ -14,6 +14,7 @@ public class AjouterEmployeDto {
     private String codeGrade;
 
     public AjouterEmployeDto() {
+        super();
     }
 
     public AjouterEmployeDto(@NotBlank String matricule, @NotBlank String codeEntreprise, @NotBlank String codeProfil,

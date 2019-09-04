@@ -1,11 +1,14 @@
 #### Liste des entreprise
 GET http://localhost:8080/entreprises HTTP/1.1
 
+
 #### Liste des grades
 GET http://localhost:8080/grades HTTP/1.1
 
+
 #### Liste des profils de rémuneration
 GET http://localhost:8080/profil_remuneration HTTP/1.1
+
 
 #### Referentiel :  liste des entreprises + liste des rémunérations + liste des profils de rémuneration
 GET http://localhost:8080/referentiel HTTP/1.1
@@ -16,10 +19,10 @@ POST http://localhost:8080/remuneration_employe HTTP/1.1
 content-type: application/json
 
 {
-    "matricule" : "sample",
+    "matricule" : "44fd25eb-2bd8-479f-b638-7dedb9d3605f",
     "code_entreprise" : "DEV",
-    "code_profil" : "cadre",
-    "code_grade" : "A"
+    "code_profil" : "Technicien",
+    "code_grade" : "GRADE_A"
 }
 
 #### Liste des employes

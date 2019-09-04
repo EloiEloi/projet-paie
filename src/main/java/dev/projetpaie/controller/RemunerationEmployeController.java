@@ -33,11 +33,45 @@ public class RemunerationEmployeController {
     private RemunerationEmployeService remunerationEmployeService;
 
     @PostMapping
-
     public RemunerationEmployeDto ajouterEmploye(@Valid @RequestBody AjouterEmployeDto ajoutEmployeDto)
             throws MatriculeNonTrouveException, RemunerationEmployeException {
         return new RemunerationEmployeDto(remunerationEmployeService.ajouterEmploye(ajoutEmployeDto));
     }
+
+    // @PostMapping
+    // public ResponseEntity<List<EntrepriseDto>> listerEntreprises() {
+    // return new ResponseEntity<>(entrepriseService.recupererListeEntreprisesDto(),
+    // HttpStatus.OK);
+    // }
+
+    // @PostMapping
+    // public ResponseEntity<Post> create(@PathVariable String username,
+    // @RequestBody Post post)
+    // throws ContentNotAllowedException {
+    // List<ObjectError> contentNotAllowedErrors =
+    // ContentUtils.getContentErrorsFrom(post);
+
+    // if (!contentNotAllowedErrors.isEmpty()) {
+    // throw ContentNotAllowedException.createWith(contentNotAllowedErrors);
+    // }
+
+    // // More logic on Post
+
+    // return new ResponseEntity<>(HttpStatus.CREATED);
+    // }
+
+    // @ExceptionHandler(ContentNotAllowedException.class)
+    // public ResponseEntity<ApiError>
+    // handleContentNotAllowedException(ContentNotAllowedException cnae) {
+    // List<String> errorMessages = cnae.getErrors()
+    // .stream()
+    // .map(contentError -> contentError.getObjectName() + " " +
+    // contentError.getDefaultMessage())
+    // .collect(Collectors.toList());
+
+    // return new ResponseEntity<>(new ApiError(errorMessages),
+    // HttpStatus.BAD_REQUEST);
+    // }
 
     // TODO Get sur remuneration employe ( @GetMapping(params = "matricules")
     // @GetMapping
